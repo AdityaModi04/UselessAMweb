@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aditya Modi's Useful Website</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+    
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1, #96c93d);
+      background-size: 600%;
+      animation: gradient 12s ease infinite;
+      color: #ffffff;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      font-size: 4rem;
+      font-weight: 700;
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+      margin-bottom: 0.5rem;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #ffd700;
+      margin-bottom: 2rem;
+      animation: fadeIn 1.5s ease-in-out 0.3s;
+      animation-fill-mode: both;
+    }
+
+    button {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      padding: 1.2rem 3rem;
+      background-color: #8b5cf6;
+      color: #ffffff;
+      border: none;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite ease-in-out;
+      box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
+    }
+
+    button:hover {
+      background-color: #7c3aed;
+      transform: scale(1.15);
+      box-shadow: 0 0 25px rgba(139, 92, 246, 0.7);
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    footer {
+      position: absolute;
+      bottom: 1rem;
+      font-size: 1.3rem;
+      color: #ffffff;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      animation: slideUp 1.5s ease-in-out 0.9s;
+      animation-fill-mode: both;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2.5rem; }
+      h2 { font-size: 2rem; }
+      button { font-size: 1.3rem; padding: 1rem 2rem; }
+      footer { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <h1>ADITYA MODI'S</h1>
+  <h2>USEFUL WEBSITE</h2>
+  <button onclick="goToRandomWebsite()">TAKE ME TO A USELESS WEBSITE</button>
+  <footer>Designed by Aditya Modi</footer>
+
+  <script>
+    const websites = [
+      'https://sliding.toys/mystic-square/15-puzzle/daily/', // Daily 15 Puzzle (4x4 sliding puzzle)
+      'https://paint.toys/', // Painting game, no undo/redo
+      'https://www.checkboxrace.com', // Checkbox-clicking game
+      'https://2048game.com', // Number puzzle game
+      'https://quickdraw.withgoogle.com', // AI drawing game
+      'https://www.hexagonalmaze.com', // Hexagonal maze puzzle
+      'https://www.tomstoys.com', // Maze games (Just Maze, Faultless, Race the Clock)
+      'https://findtheinvisiblecow.com', // Audio-based animal finding game
+      'https://www.spinthewheel.app', // Wheel-spinning game
+      'https://www.mazetoys.com', // Maze games by Tim Holman
+      'https://bouncingdvdlogo.com', // DVD logo bouncing game
+      'https://hackertyper.com', // Fake hacking simulator
+      'https://koalastothemax.com', // Circle-splitting koala game
+      'https://cat-bounce.com', // Cat bouncing game
+      'https://weavesilk.com', // Interactive silk art game
+      'https://thisissand.com', // Sand art creation game
+      'https://sliding.toys/klotski', // Klotski sliding puzzle
+      'https://sliding.toys/rush-hour', // Rush Hour sliding puzzle
+      'https://www.boredbutton.com', // Random games and quizzes
+      'https://thezen.zone', // Zen drawing game
+      'https://eelslap.com', // Eel slapping game
+      'https://pointerpointer.com', // Mouse pointer tracking game
+      'https://heeeeeeeey.com', // Ho spinning game
+      'https://hooooooooo.com', // Ho spinning game
+      'https://papertoilet.com', // Toilet paper rolling game
+      'https://www.neverendingpizza.com', // Pizza spinning game
+      'https://www.catflix.lol', // Cat video game
+      'https://www.alwaysjudgeabookbyitscover.com', // Weird book recommendations
+      'https://www.fishfeeder.xyz', // Fish feeding game
+      'https://www.ismycomputeron.com', // Computer on check game
+      'https://www.windowswap.com', // Window view exploration
+      'https://www.thedeepsea.com', // Deep sea scrolling game
+      'https://www.100000stars.com', // Star navigation game
+      'https://screamintothevoid.com', // Text screaming game
+      'https://29a.ch/sandbox/2011/neonflames/', // Nebula painting game
+      'https://clicking.toys/peg-solitaire/english/', // Peg Solitaire game
+      'https://clicking.toys/flip-grid/4x4/', // Flip Grid 4x4 puzzle
+      'https://randomwebsite.com', // Random website redirector
+      'https://www.longdogechallenge.com', // Long Doge scrolling game
+      'https://rrrrrrip.com', // Paper ripping game
+      'https://patience-is-a-virtue.com', // Fake loading game
+      'https://endless.horse', // Endless horse scrolling
+      'https://corndog.io', // Corn dog eating game
+    ];
+
+    let visitedWebsites = []; // Track visited websites in session
+
+    function goToRandomWebsite() {
+      if (visitedWebsites.length >= websites.length) {
+        visitedWebsites = []; // Reset if all websites visited
+      }
+
+      const availableWebsites = websites.filter(url => !visitedWebsites.includes(url));
+      if (availableWebsites.length === 0) {
+        visitedWebsites = [];
+        availableWebsites.push(...websites);
+      }
+
+      const selectedIndex = Math.floor(Math.random() * availableWebsites.length);
+      const selectedWebsite = availableWebsites[selectedIndex];
+      visitedWebsites.push(selectedWebsite);
+      window.location.href = selectedWebsite;
+    }
+  </script>
+</body>
+</html>
